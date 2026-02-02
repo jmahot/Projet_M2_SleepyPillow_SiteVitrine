@@ -56,14 +56,29 @@ function App() {
           <p className={`text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
             Sleepy Pillow est le premier oreiller connecté qui utilise vos données biométriques pour <strong>agir</strong> en temps réel sur la qualité de votre réveil.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {/* BOUTON TÉLÉCHARGEMENT (Principal) */}
             <a 
               href="/sleepy-pillow-v1.apk" 
               download 
-              className="flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20"
+              className="flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20 w-full sm:w-auto justify-center"
             >
               <Download size={24} />
               TÉLÉCHARGER L'APK
+            </a>
+
+            {/* BOUTON DÉMO (Secondaire) */}
+            <a 
+              href="https://sleepypillow-demo.netlify.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`flex items-center gap-3 px-10 py-5 rounded-2xl font-black text-lg border-2 transition-all w-full sm:w-auto justify-center ${
+                darkMode 
+                  ? 'border-slate-700 text-white hover:bg-slate-800' 
+                  : 'border-slate-200 text-slate-900 hover:bg-slate-100'
+              }`}
+            >
+              VOIR LA DÉMO LIVE
             </a>
           </div>
         </div>
