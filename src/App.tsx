@@ -39,8 +39,8 @@ function App() {
           </button>
 
           <a 
-            href="/sleepy-pillow-v1.apk" 
-            download="SleepyPillow_Beta.apk"
+            href="/sleepy-pillow.apk" 
+            download="SleepyPillow.apk"
             onClick={() => triggerNotif("Téléchargement lancé !", "success")}
             className={`${darkMode ? 'bg-white text-black' : 'bg-blue-600 text-white'} px-6 py-2 rounded-full text-sm font-black hover:opacity-90 transition-all uppercase tracking-widest inline-block`}
           >
@@ -65,8 +65,8 @@ function App() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* BOUTON TÉLÉCHARGEMENT (Principal) */}
             <a 
-              href="/sleepy-pillow-v1.apk" 
-              download 
+              href="/sleepy-pillow.apk" 
+              download="SleepyPillow.apk"
               onClick={() => triggerNotif("Téléchargement lancé !", "success")}
               className="flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20"
             >
