@@ -33,13 +33,17 @@ function App() {
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
-          <button className={`${darkMode ? 'bg-white text-black' : 'bg-blue-600 text-white'} px-6 py-2 rounded-full text-sm font-black hover:opacity-90 transition-all uppercase tracking-widest`}>
+          <a 
+            href="/sleepy-pillow-v1.apk" 
+            download="SleepyPillow_Beta.apk"
+            className={`${darkMode ? 'bg-white text-black' : 'bg-blue-600 text-white'} px-6 py-2 rounded-full text-sm font-black hover:opacity-90 transition-all uppercase tracking-widest inline-block`}
+          >
             APK Beta
-          </button>
+          </a>
         </div>
       </nav>
 
-      {/* --- HERO SECTION --- */}
+      {/* --- HEADER SECTION --- */}
       <header className="relative pt-20 pb-16 px-6 overflow-hidden">
         {/* Glow effect s'adapte au thème */}
         <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-[120px] pointer-events-none ${darkMode ? 'bg-blue-600/10' : 'bg-blue-400/20'}`}></div>
@@ -53,10 +57,14 @@ function App() {
             Sleepy Pillow est le premier oreiller connecté qui utilise vos données biométriques pour <strong>agir</strong> en temps réel sur la qualité de votre réveil.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20">
+            <a 
+              href="/sleepy-pillow-v1.apk" 
+              download 
+              className="flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20"
+            >
               <Download size={24} />
               TÉLÉCHARGER L'APK
-            </button>
+            </a>
           </div>
         </div>
       </header>
