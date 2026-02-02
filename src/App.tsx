@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   Moon, Sun, Download, Zap, BarChart3, 
-  AlertCircle, CheckCircle2, Activity 
+  AlertCircle, Activity 
 } from 'lucide-react';
 
 function App() {
