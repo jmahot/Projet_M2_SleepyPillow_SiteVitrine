@@ -1,17 +1,22 @@
 import { useState } from 'react';
 import { 
   Moon, Sun, Download, Zap, BarChart3, 
-  AlertCircle, Activity 
+  AlertCircle, CheckCircle2, Activity 
 } from 'lucide-react';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
+  const [notification, setNotification] = useState<{message: string, type: 'success' | 'error'} | null>(null);
 
   // Gestion des classes dynamiques pour le thème
   const themeClasses = darkMode 
     ? "bg-[#020617] text-white" 
     : "bg-slate-50 text-slate-900";
 
+  const triggerNotif = (msg: string, type: 'success' | 'error') => {
+    setNotification({ message: msg, type });
+    setTimeout(() => setNotification(null), 5000); // Disparaît après 5 secondes
+  };
   return (
     <div className={`min-h-screen font-sans transition-colors duration-500 selection:bg-blue-500/30 ${themeClasses}`}>
       
@@ -36,6 +41,7 @@ function App() {
           <a 
             href="/sleepy-pillow-v1.apk" 
             download="SleepyPillow_Beta.apk"
+            onClick={() => triggerNotif("Téléchargement lancé !", "success")}
             className={`${darkMode ? 'bg-white text-black' : 'bg-blue-600 text-white'} px-6 py-2 rounded-full text-sm font-black hover:opacity-90 transition-all uppercase tracking-widest inline-block`}
           >
             APK Beta
@@ -61,7 +67,8 @@ function App() {
             <a 
               href="/sleepy-pillow-v1.apk" 
               download 
-              className="flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20 w-full sm:w-auto justify-center"
+              onClick={() => triggerNotif("Téléchargement lancé !", "success")}
+              className="flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20"
             >
               <Download size={24} />
               TÉLÉCHARGER L'APK
@@ -159,6 +166,18 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {notification && (
+        <div className={`fixed bottom-8 right-8 z-50 flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl transition-all animate-bounce-in ${
+          notification.type === 'success' 
+            ? 'bg-green-600 text-white' 
+            : 'bg-red-600 text-white'
+        }`}>
+          {notification.type === 'success' ? <CheckCircle2 size={20} /> : <AlertCircle size={20} />}
+          <p className="font-bold">{notification.message}</p>
+          <button onClick={() => setNotification(null)} className="ml-2 opacity-70 hover:opacity-100">×</button>
+        </div>
+      )}
     </div>
   );
 }
