@@ -57,7 +57,7 @@ function App() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-8xl font-black leading-[0.85] tracking-tighter mb-8">
             NE VOUS CONTENTEZ PLUS <br />
-            <span className="inline-block bg-gradient-to-b from-blue-400 to-blue-700 bg-clip-text text-transparent">D'ANALYSER.</span>
+            <span className="text-gradient-fix">D'ANALYSER.</span>
           </h1>
           <p className={`text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
             Sleepy Pillow est le premier oreiller connecté qui utilise vos données biométriques pour <strong>agir</strong> en temps réel sur la qualité de votre réveil.
